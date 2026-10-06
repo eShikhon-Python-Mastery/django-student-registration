@@ -64,5 +64,3 @@ dist/
 
 # Docker overrides / local-only files
 docker-compose.override.yml
-
-.idea/
