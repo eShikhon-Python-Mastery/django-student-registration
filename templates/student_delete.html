@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Delete Student</title>
+
+    {% load static %}
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card delete-card">
+
+        <h1>
+            Delete Student
+        </h1>
+
+
+        <p class="delete-message">
+
+            Are you sure you want to delete
+
+            <strong>
+                {{ student.name }}
+            </strong>
+
+            ?
+
+        </p>
+
+
+        <div class="student-info">
+
+            <p>
+                <strong>Email:</strong>
+                {{ student.email }}
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                {{ student.phone }}
+            </p>
+
+            <p>
+                <strong>Course:</strong>
+                {{ student.course }}
+            </p>
+
+        </div>
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <button
+                type="submit"
+                class="btn-delete-confirm"
+            >
+                Yes, Delete Student
+            </button>
+
+
+            <a
+                href="{% url 'student-list' %}"
+                class="btn-back"
+            >
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
